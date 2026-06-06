@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast EPT</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+       :root {
+            --primary: #1a237e;
+            --secondary: #195960;
+            --dark: #0a0e17;
+            --text: #ffffff;
+            --card-bg: #151c2e;
+            --code-bg: #05070b;
+            --accent: #1ca3c2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+
+        header {
+            background: linear-gradient(135deg, var(--primary), #717c97);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--secondary);
+        }
+
+       header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        
+         header p {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #0b111e;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #516ea4;
+        }
+
+          nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin: 5px 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+          nav a:hover {
+            color: var(--secondary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0px 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            border-bottom: 2px solid #1ca3c2;
+            padding-bottom: 10px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        details.card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #22314d;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        details.card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 229, 255, 0.2);
+        }
+
+        summary {
+            list-style: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none; 
+        }
+
+        summary h3 {
+            color: var(--secondary);
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        summary::after {
+            content: ' ▼';
+            font-size: 0.8rem;
+            color: var(--accent);
+            float: right;
+            transition: transform 0.3s;
+            margin-top: 15px;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        details p {
+            margin-top: 15px;
+            color: #d1d5db;
+        }
+
+       .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #22314d;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 229, 255, 0.2);
+        }
+
+        .card h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+         .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .creación { background-color: #e65100; }
+        .tematica { background-color: #4a148c; }
+        .iniciar { background-color: #19475d; }
+        .motivodelpodcast { background-color: #122a89; }
+        .TUTORIALVIDEO { background-color: #113579; }
+
+        .video-container {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #22314d;
+            margin-bottom: 20px;
+        }
+
+        .video-container h2 {
+            font-size: 1.4rem;
+            border: none;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        iframe {
+            max-width: 100%;
+            margin-top: 15px;
+            border-radius: 6px;
+        }
+
+
+       table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #22314d;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: var(--text);
+        }
+
+        tr:hover {
+            background-color: #1c263f;
+        }
+
+        
+        ul {
+            list-style-position: inside;
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #22314d;
+        }
+
+        
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        pre {
+            background-color: #05070a;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            color: #a5d6ff;
+        }
+
+        
+        .code-comment { color: #6272a4; }
+        .code-keyword { color: #ff79c6; }
+        .code-string { color: #f1fa8c; }
+
+        pre .comentario {
+            color: #8b949e;
+            font-style: italic;
+        }
+
+         footer {
+            background-color: #05070b;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+    </style>
+</head>
+<body>
+   
+     <header>
+        <h1>Podcast sobre Blox Fruits (EPT)</h1>
+        <p>GRUPO VERDE</p>
+     </header>
+     
+     <nav>
+        <a href="#datos-utiles">Datos útiles</a>
+        <a href="#tutorial">Introducción al tutorial</a>
+        <a href="#Podcast">Nuestro Podcast</a>
+    </nav>
+
+    <div class="container">
+        <section id="datos-utiles">
+            <h2>Blox Fruits Datos:</h2>
+            <div class="grid">
+                
+                <details class="card">
+                    <summary>
+                        <span class="badge creación">Inicios del juego</span><br>
+                        <h3>16/01/19</h3>
+                    </summary>
+                    <p>Blox fruits fue creado el 16/01/19 por Mygame43 y Rip_Indra, fundadores de GamerRobot INC.</p>
+                </details>
+
+                <details class="card">
+                    <summary>
+                        <span class="badge tematica">¿De qué trata?</span><br>
+                        <h3>Mecánicas principales</h3>
+                    </summary>
+                    <p>Puedes hacer muchas cosas como farmear, explorar el mar, comer frutas, etc...</p>
+                </details>
+
+                <details class="card">
+                    <summary>
+                        <span class="badge iniciar">¿Cómo iniciar?</span><br>
+                        <h3>No compres giros aleatorios.</h3>
+                    </summary>
+                    <p>No gastes dinero en giros aleatorios al principio. Lo ideal es conseguir una fruta tipo "Logia" (elemental), ya que te hace inmune a los ataques de los enemigos de menor nivel.</p>
+                </details>
+
+            </div>
+        </section>
+
+        <section id="tutorial">
+            <h2>Información relevante sobre Blox Fruits</h2>
+            <div class="video-container">
+                <span class="badge TUTORIALVIDEO">Tutorial video:</span>
+                <h2>Con este video podrás saber cómo empezar en Blox Fruits</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/9n8l7sXo2j0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="motivo">
+            <div class="video-container">
+                <span class="badge motivodelpodcast">Motivo del podcast:</span>
+                <h2>Nuestro Trabajo de Computación (EPT):</h2>
+                <p style="margin-top: 15px;">El motivo de este podcast es participar de buena manera en nuestro proyecto escolar. Podríamos decir que Blox Fruits incentiva el conocimiento sobre programación y arte de una manera muy creativa y divertida.</p>
+               </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Grupo Verde | Curso de EPT</p>
+    </footer>
+
+</body>
+</html>
