@@ -114,7 +114,7 @@
             align-items: start;
         }
 
-        .card, .video-container, .enlacedepodcast, .codigodeejemplo  {
+        .card, .video-container, .enlacedepodcast, .codigodeejemplo .preguntaprincipal {
             background: linear-gradient(145deg, var(--card-bg), #0f1420);
             border-radius: 16px;
             padding: 25px;
@@ -124,7 +124,7 @@
             overflow: hidden;
         }
 
-        .card:hover, .video-container:hover, .enlacedepodcast:hover, .codigodeejemplo:hover  {
+        .card:hover, .video-container:hover, .enlacedepodcast:hover, .codigodeejemplo:hover .preguntaprincipal {
             transform: translateY(-8px) scale(1.01);
             border-color: var(--accent);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 
@@ -281,6 +281,8 @@
             color: #777;
         }
 
+        
+
     </style>
 </head>
 <body>
@@ -295,6 +297,7 @@
         <a href="#tutorial">Introducción al tutorial</a>
         <a href="#Podcast">Nuestro Podcast</a>
         <a href="#codigodeejemplo">Código de ejemplo</a>
+        <a href="#preguntaprincipal">Pregunta sobre el juego</a>
     </nav>
 
     <div class="container">
@@ -307,7 +310,7 @@
                         <span class="badge creación">Inicios del juego</span><br>
                         <h3>16/01/19</h3>
                     </summary>
-                    <p>Blox fruits fue creado el 16/01/19 por Mygame43 y Rip_Indra, fundadores de GamerRobot INC.</p>
+                    <p>Blox fruits fue creado el 16/01/19 por Mygame43 y Rip_Indra, fundadores de GamerRobot INC, se convirtió en el juego mas grande de Roblox y uno de los mas grandes del mundo.</p>
                 </details>
 
                 <details class="card">
@@ -315,15 +318,17 @@
                         <span class="badge tematica">¿De qué trata?</span><br>
                         <h3>Mecánicas principales</h3>
                     </summary>
-                    <p>Puedes hacer muchas cosas como farmear, explorar el mar, comer frutas, etc...</p>
+                    <p>Puedes hacer muchas cosas como farmear (En este caso conseguir dinero y comprar frutas), explorar el mar, comer frutas y pelear con otros jugadores.</p>
                 </details>
 
                 <details class="card">
                     <summary>
                         <span class="badge iniciar">¿Cómo iniciar?</span><br>
-                        <h3>No compres giros aleatorios.</h3>
+                        <h3>Es díficil comenzar, aca te dejo unos consejos:</h3>
                     </summary>
-                    <p>No gastes dinero en giros aleatorios al principio. Lo ideal es conseguir una fruta tipo "Logia" (elemental), ya que te hace inmune a los ataques de los enemigos de menor nivel.</p>
+                    <p>1-No gastes dinero en giros aleatorios al principio. Lo ideal es conseguir una fruta encontrandola.  
+                    2- Intenta comprar algo llamado: "Haki", que te permite golpear a un usuario de fruta elemental (inmune a ataques normales).
+                    3-Al momento de escoger pirata o marine, te recomiendo elegir marine, porque podras tener botes rápidos y baratos.</p>
                 </details>
 
             </div>
@@ -334,7 +339,7 @@
             <h2>Información relevante sobre Blox Fruits</h2>
             <div class="video-container">
                 <span class="badge TUTORIALVIDEO">Tutorial video:</span>
-                <h3>Con este video podrás saber cómo empezar en Blox Fruits</h3>
+                <h3>Con este video podrás saber cómo empezar en Blox Fruits, si te sigue costando entender podrías usar la wiki: "Fandom", muy útil para obtener información valiosa.</h3>
                <iframe class="video-podcast" 
             width="560" 
             height="315" 
@@ -351,10 +356,10 @@
       <section id="Podcast">
            <details class="card" id="Podcast">
                     <summary>
-                        <span class="badge blue">Nuestro Podcast EPT</span><br>
+                        <span class="badge blue">Podcast </span><br>
                         <h3>Nuestro Podcast EPT</h3>
                     </summary>
-                    <p>El motivo de este podcast es participar de manera creativa en nuestro proyecto de Computación. Blox Fruits es un ejemplo perfecto de cómo incentivar la programación, el diseño de interfaces (UI) y la retención de usuarios mediante el arte interactivo.<br><br><strong>Enlace del podcast:</strong> <a href="#" style="color: var(--accent);">Escuchar aquí</a></p>
+                    <p>El motivo de este podcast es participar de manera creativa en nuestro proyecto de Computación. Blox Fruits es un ejemplo perfecto de cómo incentivar la programación y la retención de usuarios mediante el arte interactivo.<br><br><strong>Enlace del podcast:</strong> <a href="#" style="color: var(--accent);">Escuchar aquí</a></p>
                     <span class="enlace1">Les presentamos nuestro enlace donde se encuentra el podcast:</span>
             </details>
         </section>
@@ -362,9 +367,9 @@
         <section id="codigodeejemplo">
             <div class="codigodeejemplo">
                 <span class="badge codigodeejemplo">Código de ejemplo:</span>
-            <pre><code class="language-javascript">// Ejemplo de código en JavaScript //
+            <pre><code class="language-javascript">// Ejemplo de código en Roblox Studio. //
 
-      //CODIGO DE EJEMPLO SOBRE BLOX FRUITS//
+      //ESTE CÓDIGO ES UNA MUESTRA DE COMO SE CREÓ BLOX FRUITS, (CODIGO DE EJEMPLO SOBRE BLOX FRUITS)//
 
      //Estado del Jugador explicado en codigo //
         const player = {
@@ -391,6 +396,18 @@
     </code></pre>
         </section>
     </div>
+
+    <section id="preguntaprincipal">
+        <details class="card" id="preguntaprincipal">
+            <summary>
+                <span class="badge blue">¿Por qué es un juegazo?</span>
+            </summary>
+        <p>Es un juegazo porque tiene muchísimo contenido, miles de lineas de código, desarroladores activos y buenos con la comunidad, hay actualizaciones activas, buenos gráficos, muchas mecanicas y en general se nota demasiado el esfuerzo y amor de los desarrolladores por el juego.</p>
+        <span class="enlace1">¿Por qué deberías jugarlo?</span>
+            <p>Porque tiene tantas cosas que hacer que terminarias buscando con que aburrite.</p>
+        </details>
+    </section>
+    
 
     <footer>
         <p>&copy; Nuestro Podcast EPT. 2do de secundaria, sección: B.</p>
