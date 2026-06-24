@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Podcast EPT</title>
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://googleapis.com" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
 
     <style>
-       :root {
+        :root {
             --primary: #13174b;
             --secondary: #195960;
             --dark: #05070b;
@@ -36,8 +32,7 @@
             line-height: 1.6;
         }
 
-
-          header {
+        header {
             background: linear-gradient(135deg, var(--primary), #0a0e17);
             padding: 40px 20px;
             text-align: center;
@@ -81,7 +76,7 @@
             transition: color 0.3s, text-shadow 0.3s;
         }
 
-           nav a:hover {
+        nav a:hover {
             color: var(--accent);
             text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
         }
@@ -96,7 +91,6 @@
             margin-bottom: 50px;
             scroll-margin-top: 80px;
         }
-
     
         h2 {
             font-size: 2rem;
@@ -114,7 +108,8 @@
             align-items: start;
         }
 
-        .card, .video-container, .enlacedepodcast, .codigodeejemplo .preguntaprincipal {
+        /* Corregido el espacio por comas */
+        .card, .video-container, .enlacedepodcast, .codigodeejemplo, .preguntaprincipal {
             background: linear-gradient(145deg, var(--card-bg), #0f1420);
             border-radius: 16px;
             padding: 25px;
@@ -124,7 +119,8 @@
             overflow: hidden;
         }
 
-        .card:hover, .video-container:hover, .enlacedepodcast:hover, .codigodeejemplo:hover .preguntaprincipal {
+        /* Corregido el efecto hover por comas */
+        .card:hover, .video-container:hover, .enlacedepodcast:hover, .codigodeejemplo:hover, .preguntaprincipal:hover {
             transform: translateY(-8px) scale(1.01);
             border-color: var(--accent);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 
@@ -132,15 +128,13 @@
                         inset 0 0 15px rgba(0, 240, 255, 0.05);
         }
 
-
-         summary {
+        summary {
             list-style: none;
             cursor: pointer;
             outline: none;
             position: relative;
             padding-right: 30px;
         }
-
 
         summary::-webkit-details-marker {
             display: none; 
@@ -168,12 +162,11 @@
             transform: rotate(180deg);
         }
 
-       details p {
+        details p {
             margin-top: 15px;
             color: #9ca3af;
             line-height: 1.7;
         }
-
 
         .badge {
             display: inline-block;
@@ -185,8 +178,6 @@
             color: #fff;
         }
         
-
-
         .badge.blue { background: linear-gradient(45deg, #1d4ed8, #485c7d); }
         .badge.purple { background: linear-gradient(45deg, #483c5b, #8b5cf6); }
         .badge.red { background: linear-gradient(45deg, #5e3e3e, #ef4444); }
@@ -197,8 +188,7 @@
         .motivodelpodcast { background: linear-gradient(45deg, #6876ae, #1a3dbd); }
         .TUTORIALVIDEO { background: linear-gradient(45deg, #113579, #134090); }
         .enlace1 { background: linear-gradient(45deg, #151c2e, #1a237e); }
-        .codigodeejemplo { background: linear-gradient(45deg, #1a237e, #626aa3); }
-
+        .codigodeejemplo-badge { background: linear-gradient(45deg, #1a237e, #626aa3); }
 
         .video-container h2 {
             font-size: 1.4rem;
@@ -213,8 +203,7 @@
             border-radius: 6px;
         }
 
-
-       table {
+        table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
@@ -237,7 +226,6 @@
         tr:hover {
             background-color: #1c263f;
         }
-
         
         ul {
             list-style-position: inside;
@@ -246,7 +234,6 @@
             border-radius: 8px;
             border: 1px solid #22314d;
         }
-
         
         ul li {
             margin-bottom: 10px;
@@ -261,7 +248,6 @@
             font-family: 'Courier New', Courier, monospace;
             color: #a5d6ff;
         }
-
         
         .code-comment { color: #6272a4; }
         .code-keyword { color: #ff79c6; }
@@ -272,7 +258,7 @@
             font-style: italic;
         }
 
-         footer {
+        footer {
             background-color: #05070b;
             text-align: center;
             padding: 20px;
@@ -280,9 +266,6 @@
             font-size: 0.9rem;
             color: #777;
         }
-
-        
-
     </style>
 </head>
 <body>
@@ -324,101 +307,91 @@
                 <details class="card">
                     <summary>
                         <span class="badge iniciar">¿Cómo iniciar?</span><br>
-                        <h3>Es díficil comenzar, aca te dejo unos consejos:</h3>
+                        <h3>Es díficil comenzar, acá te dejo unos consejos:</h3>
                     </summary>
-                    <p>1-No gastes dinero en giros aleatorios al principio. Lo ideal es conseguir una fruta encontrandola.  
-                    2- Intenta comprar algo llamado: "Haki", que te permite golpear a un usuario de fruta elemental (inmune a ataques normales).
-                    3-Al momento de escoger pirata o marine, te recomiendo elegir marine, porque podras tener botes rápidos y baratos.</p>
+                    <p>1-No gastes dinero en giros aleatorios al principio. Lo ideal es conseguir una fruta encontrándola.<br>  
+                    2- Intenta comprar algo llamado: "Haki", que te permite golpear a un usuario de fruta elemental (inmune a ataques normales).<br>
+                    3-Al momento de escoger pirata o marine, te recomiendo elegir marine, porque podrás tener botes rápidos y baratos.</p>
                 </details>
 
             </div>
         </section>
     
-       <section id="tutorial">
-               
+        <section id="tutorial">
             <h2>Información relevante sobre Blox Fruits</h2>
             <div class="video-container">
                 <span class="badge TUTORIALVIDEO">Tutorial video:</span>
                 <h3>Con este video podrás saber cómo empezar en Blox Fruits, si te sigue costando entender podrías usar la wiki: "Fandom", muy útil para obtener información valiosa.</h3>
-               <iframe class="video-podcast" 
-            width="560" 
-            height="315" 
-            src="https://www.youtube.com/embed/eArcX25eS0s" 
-            title="Tutorial Blox Fruits" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-    </iframe>
-            
+                <iframe class="video-podcast" 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/eArcX25eS0s" 
+                    title="Tutorial Blox Fruits" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
             </div>
         </section>
 
-      <section id="Podcast">
-           <details class="card" id="Podcast">
-                    <summary>
-                        <span class="badge blue">Podcast </span><br>
-                        <h3>Nuestro Podcast EPT</h3>
-                    </summary>
-                    <p>El motivo de este podcast es participar de manera creativa en nuestro proyecto de Computación. Blox Fruits es un ejemplo perfecto de cómo incentivar la programación y la retención de usuarios mediante el arte interactivo.<br><br><strong>Enlace del podcast:</strong> <a href="#" style="color: var(--accent);">Escuchar aquí</a></p>
-                    <span class="enlace1">Les presentamos nuestro enlace donde se encuentra el podcast:</span>
+        <section id="Podcast">
+            <details class="card">
+                <summary>
+                    <span class="badge blue">Podcast </span><br>
+                    <h3>Nuestro Podcast EPT</h3>
+                </summary>
+                <p>El motivo de este podcast es participar de manera creativa en nuestro proyecto de Computación. Blox Fruits es un ejemplo perfecto de cómo incentivar la programación y la retención de usuarios mediante el arte interactivo.<br><br><strong>Enlace del podcast:</strong> <a href="#" style="color: var(--accent);">Escuchar aquí</a></p>
+                <span class="enlace1">Les presentamos nuestro enlace donde se encuentra el podcast:</span>
             </details>
         </section>
 
         <section id="codigodeejemplo">
             <div class="codigodeejemplo">
-                <span class="badge codigodeejemplo">Código de ejemplo:</span>
-            <pre><code class="language-javascript">// Ejemplo de código en Roblox Studio. //
+                <span class="badge codigodeejemplo-badge">Código de ejemplo:</span>
+                <pre><code class="language-javascript">// Ejemplo de código en Roblox Studio. //
 
-      //ESTE CÓDIGO ES UNA MUESTRA DE COMO SE CREÓ BLOX FRUITS, (CODIGO DE EJEMPLO SOBRE BLOX FRUITS)//
+//ESTE CÓDIGO ES UNA MUESTRA DE CÓMO SE CREÓ BLOX FRUITS//
 
-     //Estado del Jugador explicado en codigo //
-        const player = {
-            x: 100, y: 100,
-            speed: 4,
-            fruit: "Buddha",
-            attackRange: 120,
-            level: 2300
-        };
-            
-        //Mecánica de Combate de la Fruta explicado en código//
-            if (distance <= player.attackRange) {
-                // Mostrar visualmente el rango de la fruta 
-                rangeCircle.style.display = 'block';
-                rangeCircle.style.width = (player.attackRange * 2) + 'px';
-                rangeCircle.style.height = (player.attackRange * 2) + 'px';
-                rangeCircle.style.left = (player.x + 25 - player.attackRange) + 'px';
-                rangeCircle.style.top = (player.y + 25 - player.attackRange) + 'px';
-                printLog(`¡Rango alcanzado! Usando habilidad Z de la fruta ${player.fruit}.`);
-            }
-                //esto es una parte del código util de blox fruits//
-            
-         
-    </code></pre>
-        </section>
+//Estado del Jugador explicado en código //
+const player = {
+    x: 100, y: 100,
+    speed: 4,
+    fruit: "Buddha",
+    attackRange: 120,
+    level: 2300
+};
+    
+//Mecánica de Combate de la Fruta explicado en código//
+if (distance <= player.attackRange) {
+    // Mostrar visualmente el rango de la fruta 
+    rangeCircle.style.display = 'block';
+    rangeCircle.style.width = (player.attackRange * 2) + 'px';
+    rangeCircle.style.height = (player.attackRange * 2) + 'px';
+    rangeCircle.style.left = (player.x + 25 - player.attackRange) + 'px';
+    rangeCircle.style.top = (player.y + 25 - player.attackRange) + 'px';
+    printLog(`¡Rango alcanzado! Usando habilidad Z de la fruta ${player.fruit}.`);
+}
+//esto es una parte del código útil de blox fruits//
+                </code></pre>
+            </div> </section>
     </div>
 
-    <section id="preguntaprincipal">
-        <details class="card" id="preguntaprincipal">
+    <section id="preguntaprincipal" class="container">
+        <details class="card preguntaprincipal">
             <summary>
                 <span class="badge blue">¿Por qué es un juegazo?</span>
             </summary>
-        <p>Es un juegazo porque tiene muchísimo contenido, miles de lineas de código, desarroladores activos y buenos con la comunidad, hay actualizaciones activas, buenos gráficos, muchas mecanicas y en general se nota demasiado el esfuerzo y amor de los desarrolladores por el juego.</p>
-        <span class="enlace1">¿Por qué deberías jugarlo?</span>
-            <p>Porque tiene tantas cosas que hacer que terminarias buscando con que aburrite.</p>
+            <p>Es un juegazo porque tiene muchísimo contenido, miles de líneas de código, desarrolladores activos y buenos con la comunidad, hay actualizaciones activas, buenos gráficos, muchas mecánicas y en general se nota demasiado el esfuerzo y amor de los desarrolladores por el juego.</p>
+            <br>
+            <span class="enlace1">¿Por qué deberías jugarlo?</span>
+            <p style="margin-top: 10px;">Porque tiene tantas cosas que hacer que terminarías buscando con qué aburrirte.</p>
         </details>
     </section>
-    
 
     <footer>
         <p>&copy; Nuestro Podcast EPT. 2do de secundaria, sección: B.</p>
     </footer>
 
-
-
-
-
-  
-
-
 </body>
+</html>
 </html>
